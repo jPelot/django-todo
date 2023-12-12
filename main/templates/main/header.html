@@ -1,0 +1,12 @@
+{% extends "main/template.html" %}
+
+
+{% block body %}
+<p>
+    <a href="{% url 'index' %}">Home</a> |
+    <a href="{% url 'classes' %}">Classes</a> |
+    <a href="{% url 'logout' %}">Log Out</a> |
+</p>
+{% block content %}
+{% endblock %}
+{% endblock %}
