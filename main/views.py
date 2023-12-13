@@ -29,10 +29,15 @@ def index(request):
         except ValidationError:
             pass
         return HttpResponseRedirect(reverse("index"))
+    view = "none"
+    if "view" in request.GET:
+        view = request.GET["view"]
     return render(request, "main/index.html", {
         "user":user,
         "courses":user.courses.all(),
-        "items":user.items.order_by('due').all()
+        "items":user.items.order_by('due').all(),
+        "views":["none","class"],
+        "current_view":view
     })
 
 

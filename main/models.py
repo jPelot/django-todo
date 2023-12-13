@@ -10,6 +10,6 @@ class Course(models.Model):
 
 class Item(models.Model):
     description = models.TextField(max_length=64)
-    course = models.ForeignKey("Course", on_delete=models.DO_NOTHING)
+    course = models.ForeignKey("Course", on_delete=models.CASCADE, related_name="items")
     due = models.DateTimeField()
     user = models.ForeignKey(User , on_delete=models.CASCADE, related_name="items")
