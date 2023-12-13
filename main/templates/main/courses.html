@@ -8,11 +8,17 @@
     {% endif %}
     {% for course in courses %}
     <tr>
-        <td><h3>{{course.name}}</h3></td>
+        <td>{{course.name}}</td>
         <td><a href="{% url 'remove_class' course.id %}">Remove</a></td>
     </tr>
     {% endfor %}
 </table>
-
+<p></p>
+<form action="{% url 'classes' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Class name">
+    <input type="text" name="short" placeholder="Abbreviation">
+    <input type="submit">
+</form>
 
 {% endblock %}
