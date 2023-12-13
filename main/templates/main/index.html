@@ -10,8 +10,8 @@
             <tr>
             <td><a href="{% url 'remove' item.id %}">X</a></td>
             <td>{{item.due.day}}/{{item.due.month}}</td>
-            <td>| {{item.course.short}}</td>
-            <td>| {{item.description }}</td>
+            <td>{{item.course.short}}</td>
+            <td class="rightmost_td">{{item.description }}</td>
             </tr>
         {% endfor %}
     </table>

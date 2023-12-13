@@ -9,7 +9,7 @@
     {% for course in courses %}
     <tr>
         <td>{{course.name}}</td>
-        <td><a href="{% url 'remove_class' course.id %}">Remove</a></td>
+        <td class="rightmost_td"><a href="{% url 'remove_class' course.id %}">Remove</a></td>
     </tr>
     {% endfor %}
 </table>
