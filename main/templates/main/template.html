@@ -2,9 +2,34 @@
 <html lang="en">
     <head>
         <title>Task List</title>
+        <style>
+            body{
+                background-color:#333;
+                font-family: 'Verdana';
+                color: #ddd;
+            }
+            a {
+                color:burlywood
+            }
+            #container {
+                max-width: 500px;
+                
+                margin: auto;
+                padding-top: 30px;
+                padding-bottom: 60px;
+                padding-left: 50px;
+                padding-right: 50px;
+                
+            }
+        </style>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        <div id="container">
+            {% block body %}
+            {% endblock %}
+        </div>
     </body>
 </html>
