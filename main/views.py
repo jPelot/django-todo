@@ -32,7 +32,7 @@ def index(request):
     return render(request, "main/index.html", {
         "user":user,
         "courses":user.courses.all(),
-        "items":user.items.all()
+        "items":user.items.order_by('due').all()
     })
 
 
@@ -100,6 +100,8 @@ def classes(request):
         "courses":user.courses.all(),
         "items":user.items.all()
     })
+
+
 
 def remove_class(request, id):
     if not request.user.is_authenticated:
